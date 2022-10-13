@@ -61,8 +61,8 @@ function main() {
       camera.position.z += 0.0;
     }
     else if(UserCar.position.z < 1342.5){ 
-      UserCar.position.z += Velocity;
-      camera.position.z += Velocity;
+      UserCar.position.z += 5.0;
+      camera.position.z += 5.0;
     }
   });
 

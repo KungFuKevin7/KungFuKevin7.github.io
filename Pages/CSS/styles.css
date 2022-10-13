@@ -1,0 +1,265 @@
+@import url(Animations.css);
+
+/*initialize new font: Radikal*/
+@font-face{
+  src: url(fonts/Nootype\ -\ Radikal\ Medium.otf);
+  font-family: Radikal;
+}
+
+/*Body*/
+body
+{
+  background-color: black;
+
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family:"Radikal";
+}
+
+
+/*standard hr = white line*/
+hr
+{
+  background-color: #FFFFFF;
+  width: 35%;
+  position: absolute;
+}
+
+/* Main Menu Image*/
+.MainImage 
+{
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* Needed to position the navbar */
+    position: relative;
+}
+/* Main Menu Image End*/
+.navbar{
+  z-index:2;
+}
+
+/*NavigationBar*/
+.NavigationBar
+{
+  overflow: hidden;
+}
+
+.NavigationBar ul
+{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.NavigationBar ul li a
+{ 
+  z-index: 10;
+  font-size: 20px;
+  font-family:'Radikal' ,'Marcellus SC', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-right:15px;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.0);
+  transition: all 0.5s;
+}
+
+.NavigationBar ul li a:hover
+{
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,1.0);
+  background-color: rgba(255,255,255,0.0);
+}
+/*Navigation Bar End*/
+
+
+/*Front Page Headers*/
+.MainText
+{
+  z-index: 0;
+  margin: 50px;
+  color: white; 
+}
+
+.MainText .Title
+{
+  margin: 100px 0px 375px 0px;
+  font-family: 'Radikal';
+  /* reveal title from left onLoad*/
+  animation: leftToRightAppear ease 1s;
+}
+
+.MainText .Title .FPSubText
+{
+  font-family: 'Radikal';
+}
+/*Front Page Headers End*/
+
+
+/*Button style grey goes to green on hover*/
+ .ButtonStyle a 
+{
+  position:absolute;
+  z-index:2;
+  font-size: 22px;
+  padding: 30px;
+  border-left: 3px solid;
+  border-color: white;
+  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  /*font-family:'Rockwell Nova Light ,Javanese Text';*/
+  font-family: 'Radikal';
+  background: linear-gradient(to left, rgba(255,255,255,0.25) 50%, rgba(0,255,0,0.5) 50%) right;
+  backdrop-filter: blur(1px);
+  background-size: 200%;
+  transition:all 0.3s ease-out;
+}
+
+.ButtonStyle #BiographBtn a{
+  position:relative;
+}
+
+.ButtonStyle a:hover
+{
+  font-size: 23px;
+  padding: 33px;
+  background-position: left;
+}
+/*end ButtonStyle*/
+
+/*footer*/
+.footer
+{
+  z-index: 10;
+  position:relative;
+  border-top: 1px solid #00FF00;
+  background-color: #101010;
+  color:white;
+}
+
+.footer .SocialMediaIcons a
+{
+  font-size: 30px;
+  color:rgba(255,255,255,1);
+  transition: all 0.25s;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.footer .SocialMediaIcons a:hover
+{
+  font-size: 32px;
+  color:rgba(0,255,0,1)
+}
+
+.footer .TopSection
+{
+  border-bottom: 1px solid #333333;
+}
+
+.footer .TopSection a
+{
+  padding-bottom: 25px;
+}
+/*footer css end*/
+
+
+.MySum, .ProgrammingSection
+{
+  padding: 0px 0px 0px 0px;
+  color: white;
+}
+
+.MySum p
+{
+  margin-bottom: 1px;
+}
+
+.HobbySection img
+{
+  float: right;
+}
+
+
+/*Icons*/
+.SocialMedia img
+{
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*Contact Info*/
+.MyContactInfo
+{
+  margin-left: 200px;
+  color:#FFFFFF;
+}
+
+
+/*To avoid use of multiple br commands*/
+.BigBlankSpace
+{
+  padding:100px;
+}
+.SmallBlankSpace
+{
+  padding: 25px;
+}
+
+
+/*Biography Section*/
+#BiographySection
+{
+  background-image: linear-gradient( rgba(0,168,107,0.25),rgb(0,168,107),rgb(80,200,120),rgb(3,192,60), rgb(0,159,0), rgb(0,0,0));
+}
+
+
+/*Big Text on Front page*/
+.carousel-caption .MainButton{
+  /*padding-top: 300px;*/
+  padding-right: 300px;
+}
+
+.carousel-caption .FrontText{
+  z-index: 0;
+  font-family: 'Radikal';
+  margin: 0px 1500px 150px 0px;
+  white-space: nowrap;
+  animation: leftToRightAppear ease 1s;
+}
+
+
+/*Remove Carousel buttons*/
+.carousel-control-prev, .carousel-control-next{
+  z-index: 1;
+  opacity:0;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover{
+  opacity:0;
+}
+
+
+/*Images in an instax style*/
+.instaxStyle
+{
+  border: white 10px solid;
+  padding-top: 20px;
+  /*Text Decorations*/
+  font-family: 'Trebuchet MS', Arial;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+/*once instaxImage is displayed (active) -> fade image in (Just like an original instax photo but faster)*/
+.active .instaxImage {
+  opacity: 1;
+  animation: fadein 5s ease;
+}

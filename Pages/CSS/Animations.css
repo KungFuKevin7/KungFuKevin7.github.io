@@ -1,0 +1,100 @@
+
+/*If user hovers over image, then change opacity of image(.imagecard)*/
+.card:hover .imagecard
+{
+  transition: .3s ease;
+  opacity:0.1;
+}
+
+/*If user hovers over image, then show text in middle(.middle)*/
+.card:hover .middle
+{
+  opacity: 1;
+}
+
+
+/*Opacity, time, placement of text inside cards at Projects.html*/
+.middle
+{
+  transition: .15s step-start;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*Cards in Projects.html*/
+.ProjectName
+{ 
+  font-family:'Radikal','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #FFFFFF;
+  font-size: 32px;
+}
+
+.card img
+{
+  width: 600px;
+  height:600px;
+}
+
+
+
+  .reveal{
+    position: relative;
+    opacity: 0;
+  }
+  
+  .reveal.active{
+    opacity: 1;
+  }
+  
+  /*reveal from different directions*/
+  .active.revealFromBottom {
+    animation: downToUpAppear 0.5s ease-in;
+  }
+  .active.revealFromRight {
+    animation: rightToLeftAppear 0.5s ease-in;
+  }
+  .active.revealFromLeft {
+    animation: leftToRightAppear 0.5s ease-in;
+  }
+  
+  @keyframes downToUpAppear {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes leftToRightAppear {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes rightToLeftAppear {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadein {
+    0% { opacity: 0; }
+    100%   { opacity: 1; }
+  }

@@ -53,6 +53,19 @@ function main() {
   initSun(scene);
 
   //Control Handler
+  window.addEventListener('touchmove', () =>{
+    let Velocity = acceleration(keyPressCount);
+    if((UserCar.position.z > 580 && UserCar.position.z < 1150) && (UserCar.position.x < -18 && UserCar.position.x > -38))
+    {
+      UserCar.position.z += 0.0;
+      camera.position.z += 0.0;
+    }
+    else if(UserCar.position.z < 1342.5){ 
+      UserCar.position.z += Velocity;
+      camera.position.z += Velocity;
+    }
+  });
+
   window.addEventListener('keydown', checkKeyPress,false);
   function checkKeyPress(key){
 

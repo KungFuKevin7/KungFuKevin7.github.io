@@ -263,3 +263,8 @@ hr
   opacity: 1;
   animation: fadein 5s ease;
 }
+
+.appear{
+  opacity: 1;
+  animation: fadein 5s ease;
+}

@@ -80,12 +80,12 @@ hr
   z-index: 0;
   margin: 50px;
   color: white; 
+  font-family: 'Radikal';
 }
 
 .MainText .Title
 {
   margin: 100px 0px 375px 0px;
-  font-family: 'Radikal';
   /* reveal title from left onLoad*/
   animation: leftToRightAppear ease 1s;
 }

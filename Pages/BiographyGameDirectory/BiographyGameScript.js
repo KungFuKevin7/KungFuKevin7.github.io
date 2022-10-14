@@ -61,7 +61,7 @@ function main() {
 
     UserCar.rotation.y = RotateCar();
 
-    if(TouchY >= 300 && (TouchX >= 50 && TouchX <= 250 )){ //Accelerate
+    if(TouchY >= 300 && (TouchX >= 100 && TouchX <= 200 )){ //Accelerate
       if(UserCar.position.x < -10 && UserCar.position.z < 510)
       {
         UserCar.position.z -= 0.0;
@@ -77,7 +77,7 @@ function main() {
         camera.position.z -= 5.0;
       }
     }
-    else if(TouchY < 300 && (TouchX >= 50 && TouchX <= 250 )){ //Reverse
+    else if(TouchY < 300 && (TouchX >= 100 && TouchX <= 200 )){ //Reverse
       if((UserCar.position.z > 580 && UserCar.position.z < 1150) && (UserCar.position.x < -18 && UserCar.position.x > -38))
       {
         UserCar.position.z += 0.0;
@@ -88,7 +88,7 @@ function main() {
         camera.position.z += 5.0;
       }
     }
-    else if(TouchX > 250 && (TouchY > 300)) //Go Right
+    else if(TouchX > 200 && (TouchY > 300)) //Go Right
     {
       UserCar.rotation.y = RotateCar("68");
       //Out of Bounds
@@ -121,7 +121,7 @@ function main() {
       }
 
     }
-    else if(TouchX > 250 && (TouchY < 300)) //Go RightForward
+    else if(TouchX > 200 && (TouchY < 300)) //Go RightForward
     {
       UserCar.rotation.y = RotateCar("69");
       //Tunnel Right hand side
@@ -141,7 +141,7 @@ function main() {
         camera.position.z += 1.0;
       }
     }
-    else if(TouchX < 50 && (TouchY < 300)) //Go LeftForward
+    else if(TouchX < 100 && (TouchY < 300)) //Go LeftForward
     {
       UserCar.rotation.y = RotateCar("81");
       
@@ -162,7 +162,7 @@ function main() {
         }
       }
     }
-    else if(TouchX < 50 && (TouchY > 300)) //Go Left
+    else if(TouchX < 100 && (TouchY > 300)) //Go Left
     {
       UserCar.rotation.y = RotateCar("65"); 
       //Left hand barriers

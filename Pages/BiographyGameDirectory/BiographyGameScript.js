@@ -54,7 +54,8 @@ function main() {
 
   //Control Handler for phones
 
-  window.addEventListener('touchstart',(event) =>{
+  window.addEventListener('touchstart',checkTouches); 
+  function checkTouches(event){
     var TouchX = event.touches[0].clientX;
     var TouchY = event.touches[0].clientY;
 
@@ -182,20 +183,7 @@ function main() {
         }
       }
     }  
-
-
-  });
-/*  window.addEventListener('touchmove', () =>{
-      if((UserCar.position.z > 580 && UserCar.position.z < 1150) && (UserCar.position.x < -18 && UserCar.position.x > -38))
-      {
-        UserCar.position.z += 0.0;
-        camera.position.z += 0.0;
-      }
-      else if(UserCar.position.z < 1342.5){ 
-        UserCar.position.z += 5.0;
-        camera.position.z += 5.0;
-      }
-  });*/
+  }
 
   //Control Handler for Keyboard
   window.addEventListener('keydown', checkKeyPress,false);

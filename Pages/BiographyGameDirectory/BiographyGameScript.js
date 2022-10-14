@@ -57,6 +57,9 @@ function main() {
   window.addEventListener('touchstart',(event) =>{
     var TouchX = event.touches[0].clientX;
     var TouchY = event.touches[0].clientY;
+
+    UserCar.rotation.y = RotateCar();
+
     if(TouchY >= 300 && (TouchX >= 50 && TouchX <= 250 )){ //Accelerate
       if(UserCar.position.x < -10 && UserCar.position.z < 510)
       {
@@ -86,7 +89,7 @@ function main() {
     }
     else if(TouchX > 250 && (TouchY > 300)) //Go Right
     {
-      UserCar.rotation.y = Math.PI/2;
+      UserCar.rotation.y = RotateCar("68");
       //Out of Bounds
       if(UserCar.position.x > -75){
         //Outside Tunnel
@@ -117,9 +120,9 @@ function main() {
       }
 
     }
-    else if(TouchX < 50 && (TouchY < 300)) //Go Left
+    else if(TouchX > 250 && (TouchY < 300)) //Go RightForward
     {
-      UserCar.rotation.y = -Math.PI/2;
+      UserCar.rotation.y = RotateCar("69");
       //Left hand barriers
       if(UserCar.position.x < 7.5){
         //Off Track Left
@@ -138,6 +141,50 @@ function main() {
         }
       }
     }
+    else if(TouchX < 50 && (TouchY < 300)) //Go Left
+    {
+      UserCar.rotation.y = RotateCar("65");
+      //Left hand barriers
+      if(UserCar.position.x < 7.5){
+        //Off Track Left
+        if((UserCar.position.x > -46 && UserCar.position.x < -7.5) && (UserCar.position.z > 580 && UserCar.position.z < 1200))
+        {
+          UserCar.position.x += 0.0;
+          camera.position.x += 0.0;
+        }  
+        else if(UserCar.position.x < 10 && UserCar.position.x > -20){
+          UserCar.position.x += 1.0;
+          camera.position.x += 1.0;
+        }
+        else{
+          UserCar.position.x += 1.0;
+          camera.position.x += 1.0;
+        }
+      }
+    }
+    else if(TouchX < 50 && (TouchY > 300)) //Go LeftForward
+    {
+      UserCar.rotation.y = RotateCar("81");
+      //Left hand barriers
+      if(UserCar.position.x < 7.5){
+        //Off Track Left
+        if((UserCar.position.x > -46 && UserCar.position.x < -7.5) && (UserCar.position.z > 580 && UserCar.position.z < 1200))
+        {
+          UserCar.position.x += 0.0;
+          camera.position.x += 0.0;
+        }  
+        else if(UserCar.position.x < 10 && UserCar.position.x > -20){
+          UserCar.position.x += 1.0;
+          camera.position.x += 1.0;
+        }
+        else{
+          UserCar.position.x += 1.0;
+          camera.position.x += 1.0;
+        }
+      }
+    }  
+
+
   });
 /*  window.addEventListener('touchmove', () =>{
       if((UserCar.position.z > 580 && UserCar.position.z < 1150) && (UserCar.position.x < -18 && UserCar.position.x > -38))

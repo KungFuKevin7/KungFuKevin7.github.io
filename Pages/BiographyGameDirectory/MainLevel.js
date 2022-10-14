@@ -53,6 +53,9 @@ function MainLevel(scene, Player){
     for(let i = 15; i < MainLevelLength; i += 100){
       scene.add(addSign(0xFFFFFF, i, 0, smallSignsMainRoad[MainRoadIndex]));
       MainRoadIndex++;
+      if(i == 15){
+        scene.add(addSign(0xFFFFFF, i + 5, -42, "https://i.imgur.com/dKt62JU.png"))
+      }
       if(i == 315) //add an extra sign on the lefthand side 
       {
         scene.add(addSign(0xFFFFFF, i + 10, -42, "https://i.imgur.com/0wfS1vx.jpg"));

@@ -53,14 +53,8 @@ function main() {
   initSun(scene);
 
   //Control Handler for phones
-  let ts;//touch start
-  window.addEventListener('touchstart', function(e){
-     ts = e.originalEvent.touches[0].clientY;
-  });
 
   window.addEventListener('touchmove', () =>{
-    let te = e.originalEvent.changedTouches[0].clientY;
-    if(ts < te){
       if((UserCar.position.z > 580 && UserCar.position.z < 1150) && (UserCar.position.x < -18 && UserCar.position.x > -38))
       {
         UserCar.position.z += 0.0;
@@ -70,22 +64,6 @@ function main() {
         UserCar.position.z += 5.0;
         camera.position.z += 5.0;
       }
-    }else{
-      if(UserCar.position.x < -10 && UserCar.position.z < 510)
-      {
-        UserCar.position.z -= 0.0;
-        camera.position.z -= 0.0;
-      }      
-      if(UserCar.position.z < 1150 && UserCar.position.x < -18 && UserCar.position.x > -38)
-      {
-        UserCar.position.z += 0.0;
-        camera.position.z += 0.0;
-      }
-      else if(UserCar.position.z > 6){
-        UserCar.position.z -= Velocity;
-        camera.position.z -= Velocity;
-      }
-    }
   });
 
   //Control Handler for Keyboard

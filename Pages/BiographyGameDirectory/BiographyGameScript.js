@@ -123,48 +123,47 @@ function main() {
     else if(TouchX > 250 && (TouchY < 300)) //Go RightForward
     {
       UserCar.rotation.y = RotateCar("69");
-      //Left hand barriers
-      if(UserCar.position.x < 7.5){
-        //Off Track Left
-        if((UserCar.position.x > -46 && UserCar.position.x < -7.5) && (UserCar.position.z > 580 && UserCar.position.z < 1200))
-        {
-          UserCar.position.x += 0.0;
-          camera.position.x += 0.0;
-        }  
-        else if(UserCar.position.x < 10 && UserCar.position.x > -20){
-          UserCar.position.x += 1.0;
-          camera.position.x += 1.0;
-        }
-        else{
-          UserCar.position.x += 1.0;
-          camera.position.x += 1.0;
-        }
+      //Tunnel Right hand side
+      if((UserCar.position.x < -7 && UserCar.position.x > -20) && (UserCar.position.z > 550 && UserCar.position.z < 1150)){
+        UserCar.position.x -= 0;
+        camera.position.x -= 0;
+      }
+      //Armco right hand side
+      else if(UserCar.position.z < 500 && UserCar.position.x < -7.5){}
+      //Out Of Bounds
+      else if(UserCar.position.x < -75){}
+      else if(UserCar.position.z > 1342.5){}
+      else{
+        UserCar.position.x -= 1.0;
+        UserCar.position.z += 1.0;
+        camera.position.x -= 1.0;
+        camera.position.z += 1.0;
       }
     }
-    else if(TouchX < 50 && (TouchY < 300)) //Go Left
-    {
-      UserCar.rotation.y = RotateCar("65");
-      //Left hand barriers
-      if(UserCar.position.x < 7.5){
-        //Off Track Left
-        if((UserCar.position.x > -46 && UserCar.position.x < -7.5) && (UserCar.position.z > 580 && UserCar.position.z < 1200))
-        {
-          UserCar.position.x += 0.0;
-          camera.position.x += 0.0;
-        }  
-        else if(UserCar.position.x < 10 && UserCar.position.x > -20){
-          UserCar.position.x += 1.0;
-          camera.position.x += 1.0;
-        }
-        else{
-          UserCar.position.x += 1.0;
-          camera.position.x += 1.0;
-        }
-      }
-    }
-    else if(TouchX < 50 && (TouchY > 300)) //Go LeftForward
+    else if(TouchX < 50 && (TouchY < 300)) //Go LeftForward
     {
       UserCar.rotation.y = RotateCar("81");
+      
+      //Tunnel Outside Right
+      if((UserCar.position.x > -48 && UserCar.position.x < -15) && (UserCar.position.z > 550 && UserCar.position.z < 1200))
+      {
+        UserCar.position.x += 0.0;
+        camera.position.x += 0.0;
+      }
+      //Out Of Bounds Z-axis
+      else if(UserCar.position.z < 1342.5){
+        if(UserCar.position.x < 8){ //Armco Lefthand side
+          UserCar.position.x += 1.0;
+          UserCar.position.z += 1.0;
+   
+          camera.position.z += 1.0;
+          camera.position.x += 1.0;
+        }
+      }
+    }
+    else if(TouchX < 50 && (TouchY > 300)) //Go Left
+    {
+      UserCar.rotation.y = RotateCar("65"); 
       //Left hand barriers
       if(UserCar.position.x < 7.5){
         //Off Track Left

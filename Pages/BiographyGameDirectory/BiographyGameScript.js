@@ -55,9 +55,25 @@ function main() {
   //Control Handler for phones
 
   window.addEventListener('touchstart',(event) =>{
-    var x = event.touches[0].clientX;
-    var y = event.touches[0].clientY;
-    if(y > 150){
+    var TouchX = event.touches[0].clientX;
+    var TouchY = event.touches[0].clientY;
+    if(TouchY >= 300 && (TouchX >= 100 && TouchX <= 200 )){ //Accelerate
+      if(UserCar.position.x < -10 && UserCar.position.z < 510)
+      {
+        UserCar.position.z -= 0.0;
+        camera.position.z -= 0.0;
+      }      
+      if(UserCar.position.z < 1150 && UserCar.position.x < -18 && UserCar.position.x > -38)
+      {
+        UserCar.position.z += 0.0;
+        camera.position.z += 0.0;
+      }
+      else if(UserCar.position.z > 6){
+        UserCar.position.z -= 5.0;
+        camera.position.z -= 5.0;
+      }
+    }
+    else if(TouchY < 300 && (TouchX >= 100 && TouchX <= 200 )){ //Reverse
       if((UserCar.position.z > 580 && UserCar.position.z < 1150) && (UserCar.position.x < -18 && UserCar.position.x > -38))
       {
         UserCar.position.z += 0.0;
@@ -68,25 +84,60 @@ function main() {
         camera.position.z += 5.0;
       }
     }
-    else{
-        if(UserCar.position.x < -10 && UserCar.position.z < 510)
+    else if(TouchX > 200 && (TouchY > 300)) //Go Right
+    {
+      //Out of Bounds
+      if(UserCar.position.x > -75){
+        //Outside Tunnel
+        if(UserCar.position.x < -8 && (UserCar.position.z > 550 && UserCar.position.z < 1100))
         {
-          UserCar.position.z -= 0.0;
-          camera.position.z -= 0.0;
-        }      
-        if(UserCar.position.z < 1150 && UserCar.position.x < -18 && UserCar.position.x > -38)
+          UserCar.position.x -= 1.0;
+          camera.position.x -= 1.0;
+        }
+        //Tunnel Wall Right
+        else if(UserCar.position.x < -7 && (UserCar.position.z > 550 && UserCar.position.z < 1150))
         {
-          UserCar.position.z += 0.0;
-          camera.position.z += 0.0;
+          UserCar.position.x -= 0;
+          camera.position.x -= 0;
         }
-        else if(UserCar.position.z > 6){
-          UserCar.position.z -= 5.0;
-          camera.position.z -= 5.0;
+        //RightSide Armco
+        else if(UserCar.position.x < -7 && UserCar.position.z < 507)
+        {
+          UserCar.position.x -= 0;
+          camera.position.x -= 0;
+        }else{
+          UserCar.position.x -= 1.0;
+          camera.position.x -= 1.0;
         }
+      }else
+      {
+        UserCar.position.x -= 0;
+        camera.position.x -= 0;
+      }
+
+    }
+    else if(TouchX < 100 && (TouchY < 300)) //Go Left
+    {
+      //Left hand barriers
+      if(UserCar.position.x < 7.5){
+        //Off Track Left
+        if((UserCar.position.x > -46 && UserCar.position.x < -7.5) && (UserCar.position.z > 580 && UserCar.position.z < 1200))
+        {
+          UserCar.position.x += 0.0;
+          camera.position.x += 0.0;
+        }  
+        else if(UserCar.position.x < 10 && UserCar.position.x > -20){
+          UserCar.position.x += Velocity;
+          camera.position.x += Velocity;
+        }
+        else{
+          UserCar.position.x += Velocity;
+          camera.position.x += Velocity;
+        }
+      }
     }
   });
-/*
-  window.addEventListener('touchmove', () =>{
+/*  window.addEventListener('touchmove', () =>{
       if((UserCar.position.z > 580 && UserCar.position.z < 1150) && (UserCar.position.x < -18 && UserCar.position.x > -38))
       {
         UserCar.position.z += 0.0;

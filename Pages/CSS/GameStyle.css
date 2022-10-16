@@ -1,5 +1,5 @@
 * {
-  touch-action: manipulation;
+  touch-action: manipulation; /*prevent zooming in due to double tap*/
 }
 
 body {

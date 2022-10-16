@@ -369,6 +369,7 @@ function main() {
     if ((UserCar.position.z > 770 && UserCar.position.z < 772.6) && UserCar.position.x < -40){
       playGuitar();
     }
+    
     if((UserCar.position.z > 1320  && UserCar.position.z < 1330) && (UserCar.position.x > -70 && UserCar.position.x < -50)){      
       if(!PlaneAdded){
         for(let i = -150; i < bannerPlaneTarget; i+= 0.01){

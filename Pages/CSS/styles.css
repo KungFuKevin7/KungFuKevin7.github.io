@@ -257,6 +257,15 @@ hr
   font-size: 32px;
 }
 
+.LanguageFilter{
+	font-weight: bold;
+  font-size:15px;
+	color: #00a86a;
+  border: solid #00a86a;
+  border-radius: 25px;
+  padding: 10px;
+}
+
 /*once instaxImage is displayed (active) -> fade image in (Just like an original instax photo but faster)*/
 /*active is added to classlist when it is (almost) visible onscreen*/
 .active .instaxImage {

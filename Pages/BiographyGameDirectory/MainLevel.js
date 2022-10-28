@@ -24,7 +24,7 @@ let highSignsMainRoad = ["BiographyGameDirectory/signimages/IntroSign.png", //Le
 let smallSignsMainRoad = ["https://i.imgur.com/IFoP1QS.png", //Car Controls (WASD)
                           "https://i.imgur.com/sn1Obx8.jpg",           //Baby Photo
                           "https://i.imgur.com/2gmJmmf.jpg",           //Me with Computer / Airplane Photo
-                          "",           //propeadeutic diploma
+                          "Pages/Assets/Images/PropedeuticCertificate.jpg",           //propeadeutic diploma
                           "https://i.imgur.com/J0U4vAN.png"];//Space bar is faster Tip
 
 function MainLevel(scene, Player){
